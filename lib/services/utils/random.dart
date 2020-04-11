@@ -2,7 +2,7 @@ import 'dart:math';
 
 const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
 
-class Utils {
+class UtilsRandom {
   static String randomString(int strlen) {
     Random rnd = new Random(new DateTime.now().millisecondsSinceEpoch);
     String result = "";

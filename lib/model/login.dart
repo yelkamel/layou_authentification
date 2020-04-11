@@ -1,5 +1,5 @@
+import 'package:auth/model/utils/validation.dart';
 import 'package:auth/services/auth.dart';
-import 'package:auth/utils/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -36,12 +36,21 @@ class LoginModel with ChangeNotifier {
     notifyListeners();
   }
 
+  // Clean error when user retry ^^
+  void listenerForRetry() {
+    controller.addListener(() {
+      error = LoginError.None;
+      notifyListeners();
+    });
+  }
+
   void submitEmail() async {
     error = LoginError.None;
 
     if (!StringValidator.isEmailValide(controller.text)) {
       error = LoginError.InvalidFormatEmail;
       notifyListeners();
+      listenerForRetry();
       return;
     }
 
@@ -65,7 +74,7 @@ class LoginModel with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<bool> submitCode() async {
+  Future<void> submitCode() async {
     error = LoginError.None;
     state = LoginState.Loading;
     notifyListeners();
@@ -78,6 +87,7 @@ class LoginModel with ChangeNotifier {
     if (!isConnected) {
       state = LoginState.NeedCode;
       error = LoginError.InvalidCode;
+      listenerForRetry();
     }
 
     notifyListeners();

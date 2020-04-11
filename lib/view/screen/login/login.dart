@@ -1,5 +1,5 @@
 import 'package:auth/model/login.dart';
-import 'package:auth/view/screen/login_content.dart';
+import 'package:auth/view/screen/login/login_hook.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
           appBar: child,
           body: Center(
             child: model.state != LoginState.Loading
-                ? LoginContent(model: model)
+                ? LoginHook(model: model)
                 : CircularProgressIndicator(),
           ),
         );

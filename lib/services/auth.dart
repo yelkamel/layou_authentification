@@ -1,6 +1,6 @@
 import 'package:amazon_cognito_identity_dart_2/cognito.dart';
 import 'package:auth/services/auth_storage.dart';
-import 'package:auth/services/utils.dart';
+import 'package:auth/services/utils/random.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -63,7 +63,7 @@ class Auth {
   }
 
   Future<bool> signUp(String email) async {
-    final randomPwd = Utils.randomString(10);
+    final randomPwd = UtilsRandom.randomString(10);
 
     final userAttributes = [
       new AttributeArg(name: 'email', value: email),
@@ -96,7 +96,7 @@ class Auth {
   }
 
   Future<bool> confirmCode(String code) async {
-    final randomPwd = Utils.randomString(10);
+    final randomPwd = UtilsRandom.randomString(10);
     print('cognitoUser confirmCode $cognitoUser');
 
     if (cognitoUser == null) {
