@@ -1,0 +1,21 @@
+{
+    "IdentityManager": {
+        "Default": {}
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "eu-west-2_Sj83k3lX8",
+                "Region": "eu-west-2"
+            }
+        }
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "eu-west-2_Sj83k3lX8",
+            "AppClientId": "335jdbkc7rggq2o3c1fohrjdp0",
+            "AppClientSecret": "335jdbkc7rggq2o3c1fohrjdp0",
+            "Region": "eu-west-2"
+        }
+    }
+}

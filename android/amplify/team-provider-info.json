@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-evolumauth-dev-183743-authRole",
+            "UnauthRoleArn": "arn:aws:iam::727222249318:role/amplify-evolumauth-dev-183743-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::727222249318:role/amplify-evolumauth-dev-183743-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "amplify-evolumauth-dev-183743-deployment",
+            "UnauthRoleName": "amplify-evolumauth-dev-183743-unauthRole",
+            "StackName": "amplify-evolumauth-dev-183743",
+            "StackId": "arn:aws:cloudformation:eu-west-2:727222249318:stack/amplify-evolumauth-dev-183743/466fce90-79b7-11ea-97a8-02bbe2e31b38",
+            "AmplifyAppId": "d26n0y3xivj16i"
+        },
+        "categories": {
+            "auth": {
+                "evolumauthdcfc306c": {}
+            }
+        }
+    }
+}
