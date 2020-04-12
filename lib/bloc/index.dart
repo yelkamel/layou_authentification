@@ -1,9 +1,10 @@
 import 'package:auth/services/auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:auth/tunnel/bloc/entrance_event.dart';
-import 'package:auth/tunnel/bloc/entrance_state.dart';
 import 'package:get_it/get_it.dart';
+
+import 'event.dart';
+import 'state.dart';
 
 GetIt locator = GetIt.instance;
 

@@ -1,5 +1,5 @@
-import 'package:auth/widget/login/model/login.dart';
-import 'package:auth/widget/step/login/login_hook.dart';
+import 'package:auth/subapp/login/model.dart';
+import 'package:auth/subapp/login/widget/login_hook.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

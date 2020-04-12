@@ -1,18 +1,17 @@
-import 'package:auth/model/login.dart';
-import 'package:auth/screen/stack/home.dart';
-import 'package:auth/tunnel/bloc/entrance_bloc.dart';
-import 'package:auth/widget/login/login.dart';
-import 'package:auth/widget/splashscreen.dart';
+import 'package:auth/subapp/login/index.dart';
+import 'package:auth/subapp/login/model.dart';
+import 'package:auth/subapp/splashscreen/splashscreen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
-import 'bloc/entrance_bloc.dart';
-import 'bloc/entrance_state.dart';
-import 'bloc/entrance_event.dart';
+import 'bloc/index.dart';
+import 'bloc/state.dart';
+import 'bloc/event.dart';
+import 'end.dart';
 
-class Entrance extends StatelessWidget {
+class TunnelStart extends StatelessWidget {
   @override
   Widget build(BuildContext contect) {
     // Tout les écrans de bloc tunnel doivent avoir un onSuccess (et peut etre des exits par fois)
@@ -36,7 +35,7 @@ class Entrance extends StatelessWidget {
               );
             }
             if (state is EntranceEnd) {
-              return HomeScreen(email: state.email);
+              return TunnelEnd(userEmail: state.email);
             }
             return Splashscreen();
           },

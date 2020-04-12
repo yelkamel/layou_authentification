@@ -1,34 +1,30 @@
-import 'package:auth/widget/login/model/login.dart';
 import 'package:flutter/material.dart';
 
-class CodeStep extends StatelessWidget {
+import '../model.dart';
+
+class EmailStep extends StatelessWidget {
   final LoginModel model;
 
-  const CodeStep({Key key, this.model}) : super(key: key);
+  const EmailStep({Key key, this.model}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(model.email),
         TextFormField(
           textAlign: TextAlign.center,
           controller: model.controller,
           decoration: InputDecoration(
-            hintText: 'Code',
+            hintText: 'Email',
             border: InputBorder.none,
             focusedBorder: InputBorder.none,
           ),
-          onEditingComplete: model.submitCode,
+          onEditingComplete: model.submitEmail,
         ),
         RaisedButton(
-          onPressed: model.submitCode,
-          child: Text("Vérifier"),
-        ),
-        RaisedButton(
-          onPressed: model.back,
-          child: Text("Retour"),
+          onPressed: model.submitEmail,
+          child: Text("Connexion"),
         ),
       ],
     );

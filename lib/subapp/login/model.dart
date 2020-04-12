@@ -1,5 +1,5 @@
 import 'package:auth/services/auth.dart';
-import 'package:auth/widget/utils/validation.dart';
+import 'package:auth/utils/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -54,7 +54,7 @@ class LoginModel with ChangeNotifier {
       return;
     }
 
-    email = controller.text;
+    email = controller.text.trim();
     state = LoginState.Loading;
     notifyListeners();
 
