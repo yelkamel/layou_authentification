@@ -11,6 +11,8 @@ GetIt locator = GetIt.instance;
 class EntranceBloc extends Bloc<EntranceEvent, EntranceState> {
   final Auth auth = locator.get<Auth>();
 
+  String userCongitoEmail;
+
   @override
   EntranceState get initialState => EntranceInitial();
 
@@ -31,10 +33,9 @@ class EntranceBloc extends Bloc<EntranceEvent, EntranceState> {
 
   Stream<EntranceState> mapAppStartedToState() async* {
     final email = await auth.init();
-
-    print('username $email');
     if (email != null) {
-      yield EntranceEnd(email: email);
+      userCongitoEmail = email;
+      yield EntranceEnd();
       return;
     }
 
