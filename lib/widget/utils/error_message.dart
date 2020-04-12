@@ -1,4 +1,4 @@
-import '../../../model/login.dart';
+import 'package:auth/widget/login/model/login.dart';
 
 class ErrorMessage {
   static String loginError(LoginError error) {

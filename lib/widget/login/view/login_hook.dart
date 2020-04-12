@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:auth/model/login.dart';
-import 'package:auth/view/screen/login/code_step.dart';
-import 'package:auth/view/screen/login/email_step.dart';
-import 'package:auth/view/screen/utils/error_message.dart';
+import 'package:auth/widget/login/code_step.dart';
+import 'package:auth/widget/login/email_step.dart';
+import 'package:auth/widget/utils/error_message.dart';
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';

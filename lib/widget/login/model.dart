@@ -1,5 +1,5 @@
-import 'package:auth/model/utils/validation.dart';
 import 'package:auth/services/auth.dart';
+import 'package:auth/widget/utils/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 

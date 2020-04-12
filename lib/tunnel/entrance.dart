@@ -1,8 +1,9 @@
 import 'package:auth/model/login.dart';
+import 'package:auth/screen/stack/home.dart';
 import 'package:auth/tunnel/bloc/entrance_bloc.dart';
-import 'package:auth/view/screen/home/home.dart';
-import 'package:auth/view/screen/login/login.dart';
-import 'package:auth/view/screen/splashscreen.dart';
+import 'package:auth/widget/login/login.dart';
+import 'package:auth/widget/splashscreen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';

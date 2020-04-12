@@ -1,6 +1,5 @@
+import 'package:auth/widget/login/model/login.dart';
 import 'package:flutter/material.dart';
-
-import '../../../model/login.dart';
 
 class CodeStep extends StatelessWidget {
   final LoginModel model;
