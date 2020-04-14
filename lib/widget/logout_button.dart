@@ -12,7 +12,10 @@ class LogoutButton extends StatelessWidget {
           LoggedOut(),
         );
       },
-      child: Icon(Icons.all_out),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Icon(Icons.exit_to_app),
+      ),
     );
   }
 }

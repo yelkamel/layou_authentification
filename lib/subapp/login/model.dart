@@ -1,5 +1,5 @@
 import 'package:auth/services/auth.dart';
-import 'package:auth/utils/validation.dart';
+import 'package:auth/services/regex.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -14,6 +14,7 @@ enum LoginState {
 enum LoginError {
   InvalidCode,
   InvalidFormatEmail,
+  EmailHasBeenSend,
   None,
 }
 
@@ -22,7 +23,7 @@ class LoginModel with ChangeNotifier {
   String email;
   LoginState state = LoginState.Init;
   LoginError error = LoginError.None;
-
+  String lastEmail = '';
   TextEditingController controller = TextEditingController();
 
   final Auth service = locator.get<Auth>();
@@ -46,17 +47,27 @@ class LoginModel with ChangeNotifier {
 
   void submitEmail() async {
     error = LoginError.None;
+    email = controller.text.trim();
 
-    if (!StringValidator.isEmailValide(controller.text)) {
+    if (!Regex.isEmailValide(email)) {
       error = LoginError.InvalidFormatEmail;
       notifyListeners();
       listenerForRetry();
       return;
     }
 
-    email = controller.text.trim();
     state = LoginState.Loading;
     notifyListeners();
+
+    // si un code a déjà était envoyer à l'addresse email
+    if (email == lastEmail) {
+      state = LoginState.NeedCode;
+      error = LoginError.EmailHasBeenSend;
+      controller.clear();
+
+      notifyListeners();
+      return;
+    }
 
     bool isSignUp = await service.signUp(email);
 
@@ -68,6 +79,7 @@ class LoginModel with ChangeNotifier {
     final bool needCode = await service.askCode(email);
 
     if (needCode) {
+      lastEmail = email;
       state = LoginState.NeedCode;
       controller.clear();
     }

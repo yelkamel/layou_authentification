@@ -9,8 +9,4 @@ class EntranceInitial extends EntranceState {}
 
 class LoginStep extends EntranceState {}
 
-class EntranceEnd extends EntranceState {
-  final String email;
-
-  EntranceEnd({this.email});
-}
+class EntranceEnd extends EntranceState {}

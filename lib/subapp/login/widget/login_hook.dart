@@ -17,7 +17,7 @@ class LoginHook extends HookWidget {
   void createSnackBar(BuildContext context, String message) {
     Flushbar(
       duration: Duration(seconds: 3),
-      title: 'Petit soucis',
+      title: 'Hello 🤓',
       message: message,
       flushbarStyle: FlushbarStyle.GROUNDED,
     )..show(context);
@@ -28,7 +28,6 @@ class LoginHook extends HookWidget {
     // POUR LES SIDES EFFECT ! 😉
     useEffect(
       () {
-        print('model.error ${model.error}');
         if (model.error != LoginError.None) {
           scheduleMicrotask(() {
             createSnackBar(context, ErrorMessage.loginError(model.error));

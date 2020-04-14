@@ -1,10 +1,11 @@
-class StringValidator {
+class Regex {
   static bool isEmailValide(String email) {
     if (email.length < 5) {
       return false;
     }
-    final re = RegExp(r'^[a-zA-Z0-9]+$');
-    return !re.hasMatch(email);
+    final re = RegExp(
+        r'^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$');
+    return re.hasMatch(email);
   }
 }
 

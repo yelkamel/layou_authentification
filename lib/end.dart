@@ -1,7 +1,8 @@
-import 'package:auth/button/logout_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'controller/entrance_controller.dart';
+import 'bloc/index.dart';
+import 'widget/logout_button.dart';
 
 class TunnelEnd extends StatelessWidget {
   final String userEmail;
@@ -11,10 +12,13 @@ class TunnelEnd extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: EntranceController.getUserEmail(context),
+        title: Text(BlocProvider.of<EntranceBloc>(context).userCongitoEmail),
         actions: <Widget>[LogoutButton()],
       ),
       backgroundColor: Colors.amber,
+      body: Center(
+        child: Text('Utilisateur connecté 😃'),
+      ),
     );
   }
 }

@@ -43,7 +43,8 @@ class EntranceBloc extends Bloc<EntranceEvent, EntranceState> {
   }
 
   Stream<EntranceState> mapLoginToState(LoggedIn event) async* {
-    yield EntranceEnd(email: event.email);
+    userCongitoEmail = event.email;
+    yield EntranceEnd();
   }
 
   Stream<EntranceState> mapLogOutToState() async* {

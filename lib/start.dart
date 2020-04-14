@@ -26,7 +26,6 @@ class TunnelStart extends StatelessWidget {
             if (state is LoginStep) {
               return ChangeNotifierProvider<LoginModel>(
                 create: (_) => LoginModel(onSuccess: (String email) {
-                  print("email $email");
                   BlocProvider.of<EntranceBloc>(context).add(
                     LoggedIn(email: email),
                   );
@@ -35,7 +34,7 @@ class TunnelStart extends StatelessWidget {
               );
             }
             if (state is EntranceEnd) {
-              return TunnelEnd(userEmail: state.email);
+              return TunnelEnd();
             }
             return Splashscreen();
           },
