@@ -1,6 +1,6 @@
 import 'package:amazon_cognito_identity_dart_2/cognito.dart';
 import 'package:auth/services/auth_storage.dart';
-import 'package:auth/services/utils/random.dart';
+import 'package:auth/utils/random.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
